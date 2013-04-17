@@ -1,0 +1,379 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="northbayhosp" Class="NorthBayDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=northbayhosp.db.10638631.hostedresource.com;Initial Catalog=northbayhosp;Persist Security Info=True;User ID=northbayhosp" SettingsObjectName="NorthBay.Framework.Properties.Settings" SettingsPropertyName="northbayhospConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Product" Member="Products">
+    <Type Name="Product">
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Product_ProductCategoryTable" Member="ProductCategoryTables" ThisKey="ProductId" OtherKey="ProductId" Type="ProductCategoryTable" />
+      <Association Name="Product_OrderItem" Member="OrderItems" ThisKey="ProductId" OtherKey="ProductId" Type="OrderItem" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VolunteerCategory" Member="VolunteerCategories">
+    <Type Name="VolunteerCategory">
+      <Column Name="VolunteerCategoryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="VolunteerCategory_Volunteer" Member="Volunteers" ThisKey="VolunteerCategoryId" OtherKey="VolunteerCategoryId" Type="Volunteer" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProductCategory" Member="ProductCategories">
+    <Type Name="ProductCategory">
+      <Column Name="ProductCategoryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="ProductCategory_ProductCategoryTable" Member="ProductCategoryTables" ThisKey="ProductCategoryId" OtherKey="ProductCategoryId" Type="ProductCategoryTable" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProductCategoryTable" Member="ProductCategoryTables">
+    <Type Name="ProductCategoryTable">
+      <Column Name="ProductCategoryTableId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductCategoryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Product_ProductCategoryTable" Member="Product" ThisKey="ProductId" OtherKey="ProductId" Type="Product" IsForeignKey="true" />
+      <Association Name="ProductCategory_ProductCategoryTable" Member="ProductCategory" ThisKey="ProductCategoryId" OtherKey="ProductCategoryId" Type="ProductCategory" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[User]" Member="Users">
+    <Type Name="User">
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="UserRoleId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="User_UserBillingAddress" Member="UserBillingAddresses" ThisKey="UserId" OtherKey="UserId" Type="UserBillingAddress" />
+      <Association Name="User_Order" Member="Orders" ThisKey="UserId" OtherKey="UserId" Type="Order" />
+      <Association Name="User_RoomBilling" Member="RoomBillings" ThisKey="UserId" OtherKey="UserId" Type="RoomBilling" />
+      <Association Name="User_RoomBillingInvoice" Member="RoomBillingInvoices" ThisKey="UserId" OtherKey="UserId" Type="RoomBillingInvoice" />
+      <Association Name="UserRole_User" Member="UserRole" ThisKey="UserRoleId" OtherKey="UserRoleId" Type="UserRole" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserRole" Member="UserRoles">
+    <Type Name="UserRole">
+      <Column Name="UserRoleId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="UserRole_User" Member="Users" ThisKey="UserRoleId" OtherKey="UserRoleId" Type="User" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Volunteer" Member="Volunteers">
+    <Type Name="Volunteer">
+      <Column Name="VolunteerId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="VolunteerCategoryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PostDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="VolunteerCategory_Volunteer" Member="VolunteerCategory" ThisKey="VolunteerCategoryId" OtherKey="VolunteerCategoryId" Type="VolunteerCategory" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VolunteerView" Member="VolunteerViews">
+    <Type Name="VolunteerView">
+      <Column Name="VolunteerId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="VolunteerCategoryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VolunteerCategoryName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PostDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserBillingAddress" Member="UserBillingAddresses">
+    <Type Name="UserBillingAddress">
+      <Column Name="UserBillingAddressId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AddressLine1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AddressLine2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CountryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PostalCode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="UserBillingAddress_Order" Member="Orders" ThisKey="UserBillingAddressId" OtherKey="UserBillingAddressId" Type="Order" />
+      <Association Name="User_UserBillingAddress" Member="User" ThisKey="UserId" OtherKey="UserId" Type="User" IsForeignKey="true" />
+      <Association Name="Country_UserBillingAddress" Member="Country" ThisKey="CountryId" OtherKey="CountryId" Type="Country" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Country" Member="Countries">
+    <Type Name="Country">
+      <Column Name="CountryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Code2" Type="System.String" DbType="NChar(2)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PrintableName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Code3" Type="System.String" DbType="NChar(3)" CanBeNull="true" />
+      <Column Name="NumberCode" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Association Name="Country_UserBillingAddress" Member="UserBillingAddresses" ThisKey="CountryId" OtherKey="CountryId" Type="UserBillingAddress" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserBillingAddressView" Member="UserBillingAddressViews">
+    <Type Name="UserBillingAddressView">
+      <Column Name="UserBillingAddressId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AddressLine1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AddressLine2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CountryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CountryName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PostalCode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OrderItem" Member="OrderItems">
+    <Type Name="OrderItem">
+      <Column Name="OrderItemId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="OrderId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Product_OrderItem" Member="Product" ThisKey="ProductId" OtherKey="ProductId" Type="Product" IsForeignKey="true" />
+      <Association Name="Order_OrderItem" Member="Order" ThisKey="OrderId" OtherKey="OrderId" Type="Order" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Order]" Member="Orders">
+    <Type Name="Order">
+      <Column Name="OrderId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserBillingAddressId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CardNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SecurityNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ExpirationMonth" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ExpirationYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NameOnCard" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Order_OrderItem" Member="OrderItems" ThisKey="OrderId" OtherKey="OrderId" Type="OrderItem" />
+      <Association Name="User_Order" Member="User" ThisKey="UserId" OtherKey="UserId" Type="User" IsForeignKey="true" />
+      <Association Name="UserBillingAddress_Order" Member="UserBillingAddress" ThisKey="UserBillingAddressId" OtherKey="UserBillingAddressId" Type="UserBillingAddress" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RoomStatus" Member="RoomStatus">
+    <Type Name="RoomStatus">
+      <Column Name="RoomStatusId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="RoomStatus_Room" Member="Rooms" ThisKey="RoomStatusId" OtherKey="RoomStatusId" Type="Room" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Equipment" Member="Equipments">
+    <Type Name="Equipment">
+      <Column Name="EquipmentId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="Equipment_RoomBillingEquipment" Member="RoomBillingEquipments" ThisKey="EquipmentId" OtherKey="EquipmentId" Type="RoomBillingEquipment" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Room" Member="Rooms">
+    <Type Name="Room">
+      <Column Name="RoomId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Number" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Building" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="[Level]" Member="Level" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RoomStatusId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="Room_RoomBilling" Member="RoomBillings" ThisKey="RoomId" OtherKey="RoomId" Type="RoomBilling" />
+      <Association Name="RoomStatus_Room" Member="RoomStatus" ThisKey="RoomStatusId" OtherKey="RoomStatusId" Type="RoomStatus" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RoomBilling" Member="RoomBillings">
+    <Type Name="RoomBilling">
+      <Column Name="RoomBillingId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RoomId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="RoomBilling_RoomBillingEquipment" Member="RoomBillingEquipments" ThisKey="RoomBillingId" OtherKey="RoomBillingId" Type="RoomBillingEquipment" />
+      <Association Name="Room_RoomBilling" Member="Room" ThisKey="RoomId" OtherKey="RoomId" Type="Room" IsForeignKey="true" />
+      <Association Name="User_RoomBilling" Member="User" ThisKey="UserId" OtherKey="UserId" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RoomBillingEquipment" Member="RoomBillingEquipments">
+    <Type Name="RoomBillingEquipment">
+      <Column Name="RoomBillingEquipmentId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RoomBillingId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EquipmentId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Equipment_RoomBillingEquipment" Member="Equipment" ThisKey="EquipmentId" OtherKey="EquipmentId" Type="Equipment" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="RoomBilling_RoomBillingEquipment" Member="RoomBilling" ThisKey="RoomBillingId" OtherKey="RoomBillingId" Type="RoomBilling" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RoomBillingInvoice" Member="RoomBillingInvoices">
+    <Type Name="RoomBillingInvoice">
+      <Column Name="RoomBillingInvoiceId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BillingAddress" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BillingContent" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SubTotal" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Tax" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BillingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="User_RoomBillingInvoice" Member="User" ThisKey="UserId" OtherKey="UserId" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Menu" Member="Menus">
+    <Type Name="Menu">
+      <Column Name="MenuItemId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Url" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ParentMenuItemId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DisplaySequence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Menu_Menu" Member="Menus" ThisKey="MenuItemId" OtherKey="ParentMenuItemId" Type="Menu" />
+      <Association Name="Menu_Menu" Member="Menu1" ThisKey="ParentMenuItemId" OtherKey="MenuItemId" Type="Menu" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Career" Member="Careers">
+    <Type Name="Career">
+      <Column Name="CareerId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Category" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="PostDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Career_Applicant" Member="Applicants" ThisKey="CareerId" OtherKey="CareerId" Type="Applicant" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Applicant" Member="Applicants">
+    <Type Name="Applicant">
+      <Column Name="ApplicantId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CareerId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fname" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Lname" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="UnitNo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="StreetNo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="StreetName" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="Province" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="Pcode" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="Tnumber" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="AppStatus" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="AppDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ResumeUrl" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="HrComment" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Career_Applicant" Member="Career" ThisKey="CareerId" OtherKey="CareerId" Type="Career" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Event" Member="Events">
+    <Type Name="Event">
+      <Column Name="EventId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="EventDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="ImageUrl" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EventType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Location" Member="Locations">
+    <Type Name="Location">
+      <Column Name="LocationId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UnitNo" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="StreetNo" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="StreetName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="Province" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="Pcode" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="Tnumber" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.Decimal" DbType="Decimal(10,6) NOT NULL" CanBeNull="false" />
+      <Column Name="Longitude" Type="System.Decimal" DbType="Decimal(10,6) NOT NULL" CanBeNull="false" />
+      <Column Name="ImageUrl" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.blood_donor" Member="blood_donors">
+    <Type Name="blood_donor">
+      <Column Name="blood_donor_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="blood_donor_name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="blood_donor_phone" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="blood_donor_email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="blood_donor_blood_group" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="blood_donor_message" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Doctor" Member="Doctors">
+    <Type Name="Doctor">
+      <Column Name="DoctorId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DoctorName" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="ContactNo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="EmailId" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Designation" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Qualification" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="JoinDate" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DepartmentId" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Biography" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ProfileImage" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.restaurant" Member="restaurants">
+    <Type Name="restaurant">
+      <Column Name="itemID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="item_name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="item_price" Type="System.Decimal" DbType="Decimal(3,2) NOT NULL" CanBeNull="false" />
+      <Column Name="item_description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ImageClass" Member="ImageClasses">
+    <Type Name="ImageClass">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FileName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="FilePath" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Medicine" Member="Medicines">
+    <Type Name="Medicine">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Stock" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CategoryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="MedicineCategory_Medicine" Member="MedicineCategory" ThisKey="CategoryId" OtherKey="Id" Type="MedicineCategory" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MedicineCategory" Member="MedicineCategories">
+    <Type Name="MedicineCategory">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CategoryName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="MedicineCategory_Medicine" Member="Medicines" ThisKey="Id" OtherKey="CategoryId" Type="Medicine" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Publication" Member="Publications">
+    <Type Name="Publication">
+      <Column Name="PublicationId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CategoryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PublicationDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Author" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Reference" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="PublicationCategory_Publication" Member="PublicationCategory" ThisKey="CategoryId" OtherKey="CategoryId" Type="PublicationCategory" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PublicationCategory" Member="PublicationCategories">
+    <Type Name="PublicationCategory">
+      <Column Name="CategoryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="PublicationCategory_Publication" Member="Publications" ThisKey="CategoryId" OtherKey="CategoryId" Type="Publication" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PublicationView" Member="PublicationViews">
+    <Type Name="PublicationView">
+      <Column Name="PublicationId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CategoryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PublicationDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Author" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Reference" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="CategoryName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

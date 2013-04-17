@@ -1,0 +1,18 @@
+C:\Users\sanjiv\Desktop\Northbaynew\NorthBay\NorthBay.Logic\bin\Debug\NorthBay.Logic.dll
+C:\Users\sanjiv\Desktop\Northbaynew\NorthBay\NorthBay.Logic\bin\Debug\NorthBay.Logic.pdb
+C:\Users\sanjiv\Desktop\Northbaynew\NorthBay\NorthBay.Logic\bin\Debug\NorthBay.Framework.dll
+C:\Users\sanjiv\Desktop\Northbaynew\NorthBay\NorthBay.Logic\bin\Debug\NorthBay.Utility.dll
+C:\Users\sanjiv\Desktop\Northbaynew\NorthBay\NorthBay.Logic\bin\Debug\NorthBay.Framework.pdb
+C:\Users\sanjiv\Desktop\Northbaynew\NorthBay\NorthBay.Logic\bin\Debug\NorthBay.Utility.pdb
+C:\Users\sanjiv\Desktop\Northbaynew\NorthBay\NorthBay.Logic\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\sanjiv\Desktop\Northbaynew\NorthBay\NorthBay.Logic\obj\Debug\NorthBay.Logic.dll
+C:\Users\sanjiv\Desktop\Northbaynew\NorthBay\NorthBay.Logic\obj\Debug\NorthBay.Logic.pdb
+C:\Users\sanjiv\Dropbox\Team Fantastic\Final Project\NorthBay\NorthBay.Logic\bin\Debug\NorthBay.Logic.dll
+C:\Users\sanjiv\Dropbox\Team Fantastic\Final Project\NorthBay\NorthBay.Logic\bin\Debug\NorthBay.Logic.pdb
+C:\Users\sanjiv\Dropbox\Team Fantastic\Final Project\NorthBay\NorthBay.Logic\bin\Debug\NorthBay.Framework.dll
+C:\Users\sanjiv\Dropbox\Team Fantastic\Final Project\NorthBay\NorthBay.Logic\bin\Debug\NorthBay.Utility.dll
+C:\Users\sanjiv\Dropbox\Team Fantastic\Final Project\NorthBay\NorthBay.Logic\bin\Debug\NorthBay.Framework.pdb
+C:\Users\sanjiv\Dropbox\Team Fantastic\Final Project\NorthBay\NorthBay.Logic\bin\Debug\NorthBay.Utility.pdb
+C:\Users\sanjiv\Dropbox\Team Fantastic\Final Project\NorthBay\NorthBay.Logic\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\sanjiv\Dropbox\Team Fantastic\Final Project\NorthBay\NorthBay.Logic\obj\Debug\NorthBay.Logic.dll
+C:\Users\sanjiv\Dropbox\Team Fantastic\Final Project\NorthBay\NorthBay.Logic\obj\Debug\NorthBay.Logic.pdb

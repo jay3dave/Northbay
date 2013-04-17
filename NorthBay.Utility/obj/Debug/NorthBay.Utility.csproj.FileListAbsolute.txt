@@ -1,0 +1,10 @@
+C:\Users\sanjiv\Desktop\Northbaynew\NorthBay\NorthBay.Utility\bin\Debug\NorthBay.Utility.dll
+C:\Users\sanjiv\Desktop\Northbaynew\NorthBay\NorthBay.Utility\bin\Debug\NorthBay.Utility.pdb
+C:\Users\sanjiv\Desktop\Northbaynew\NorthBay\NorthBay.Utility\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\sanjiv\Desktop\Northbaynew\NorthBay\NorthBay.Utility\obj\Debug\NorthBay.Utility.dll
+C:\Users\sanjiv\Desktop\Northbaynew\NorthBay\NorthBay.Utility\obj\Debug\NorthBay.Utility.pdb
+C:\Users\sanjiv\Dropbox\Team Fantastic\Final Project\NorthBay\NorthBay.Utility\bin\Debug\NorthBay.Utility.dll
+C:\Users\sanjiv\Dropbox\Team Fantastic\Final Project\NorthBay\NorthBay.Utility\bin\Debug\NorthBay.Utility.pdb
+C:\Users\sanjiv\Dropbox\Team Fantastic\Final Project\NorthBay\NorthBay.Utility\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\sanjiv\Dropbox\Team Fantastic\Final Project\NorthBay\NorthBay.Utility\obj\Debug\NorthBay.Utility.dll
+C:\Users\sanjiv\Dropbox\Team Fantastic\Final Project\NorthBay\NorthBay.Utility\obj\Debug\NorthBay.Utility.pdb

@@ -1,0 +1,533 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3E74DE53-FA6C-4A29-A093-7A42F37DA285}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NorthBay.Web</RootNamespace>
+    <AssemblyName>NorthBay.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.60919.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\Add Doctor\add.aspx" />
+    <Content Include="Admin\Canteen\canteen_admin.aspx" />
+    <Content Include="Admin\Career\Default.aspx" />
+    <Content Include="Admin\Default.aspx" />
+    <Content Include="Admin\Event\Default.aspx" />
+    <Content Include="Admin\Gift\Add.aspx" />
+    <Content Include="Admin\Gift\Default.aspx" />
+    <Content Include="Admin\Gift\Edit.aspx" />
+    <Content Include="Admin\ImageGalleryAdmin\ImageGalleryAdmin.aspx" />
+    <Content Include="Admin\Location\Default.aspx" />
+    <Content Include="Admin\Location\Default2.aspx" />
+    <Content Include="Admin\Pharmacy\AddMedicine.aspx" />
+    <Content Include="Admin\Publication\AddPublication.aspx" />
+    <Content Include="Admin\Publication\Default.aspx" />
+    <Content Include="Admin\Publication\EditPublication.aspx" />
+    <Content Include="Admin\Room\Assign.aspx" />
+    <Content Include="Admin\Room\ViewBill.aspx" />
+    <Content Include="Admin\Room\Default.aspx" />
+    <Content Include="Admin\Volunteer\Add.aspx" />
+    <Content Include="Admin\Volunteer\Default.aspx" />
+    <Content Include="Admin\Volunteer\Edit.aspx" />
+    <Content Include="Admin\web.config" />
+    <Content Include="App_Themes\Main\Images\14x14_error.png" />
+    <Content Include="App_Themes\Main\Images\20x20_calendar.gif" />
+    <Content Include="App_Themes\Main\Images\about.jpg" />
+    <Content Include="App_Themes\Main\Images\careers.jpg" />
+    <Content Include="App_Themes\Main\Images\contact.jpg" />
+    <Content Include="App_Themes\Main\Images\donate.jpg" />
+    <Content Include="App_Themes\Main\Images\en.jpg" />
+    <Content Include="App_Themes\Main\Images\fb.jpg" />
+    <Content Include="App_Themes\Main\Images\foundation.jpg" />
+    <Content Include="App_Themes\Main\Images\fr.jpg" />
+    <Content Include="App_Themes\Main\Images\home.jpg" />
+    <Content Include="App_Themes\Main\Images\lin.jpg" />
+    <Content Include="App_Themes\Main\Images\logo.jpg" />
+    <Content Include="App_Themes\Main\Images\main.jpg" />
+    <Content Include="App_Themes\Main\Images\ontario.jpg" />
+    <Content Include="App_Themes\Main\Images\rss.jpg" />
+    <Content Include="App_Themes\Main\Images\separator.jpg" />
+    <Content Include="App_Themes\Main\Images\twit.jpg" />
+    <Content Include="App_Themes\Main\style.css" />
+    <Content Include="bin\AjaxControlToolkit.dll" />
+    <Content Include="Blood donation\bd_don.aspx" />
+    <Content Include="Blood donation\sending_email.aspx" />
+    <Content Include="Canteen\canteen_home.aspx" />
+    <Content Include="Career\Application.aspx" />
+    <Content Include="Career\Default.aspx" />
+    <Content Include="Career\Details.aspx" />
+    <Content Include="Doctor\profile.aspx" />
+    <Content Include="Error.aspx" />
+    <Content Include="Event\Default.aspx" />
+    <Content Include="Event\EventDetails.aspx" />
+    <Content Include="Gift\CheckOut.aspx" />
+    <Content Include="Gift\Default.aspx" />
+    <Content Include="Gift\View.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Default.aspx" />
+    <Content Include="ImageGallery\Default.aspx" />
+    <Content Include="Images\ImageGallery\Chrysanthemum.jpg" />
+    <Content Include="Images\ImageGallery\Hydrangeas.jpg" />
+    <Content Include="Images\ImageGallery\Lighthouse.jpg" />
+    <Content Include="Images\ImageGallery\loader.gif" />
+    <Content Include="Images\Products\2.jpg" />
+    <Content Include="Images\Products\26.jpg" />
+    <Content Include="Location\Default.aspx" />
+    <Content Include="Location\Directions.aspx" />
+    <Content Include="Location\MapToLocations.aspx" />
+    <Content Include="Location\Scripts\jquery-1.8.2-vsdoc.js" />
+    <Content Include="Location\Scripts\jquery-1.8.2.js" />
+    <Content Include="Location\Scripts\jquery-1.8.2.min.js" />
+    <Content Include="Login.aspx" />
+    <Content Include="obj\Script\jquery.js" />
+    <Content Include="obj\Script\jqueryui.js" />
+    <Content Include="obj\Script\global.js" />
+    <Content Include="Pharmacy\Default.aspx" />
+    <Content Include="Publication\Default.aspx" />
+    <Content Include="Script\global.js" />
+    <Content Include="Script\jquery.js" />
+    <Content Include="Script\jqueryui.js" />
+    <Content Include="Script\volunteer.js" />
+    <Content Include="Volunteer\Default.aspx" />
+    <Content Include="Volunteer\Opportunities.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\Add Doctor\add.aspx.cs">
+      <DependentUpon>add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Add Doctor\add.aspx.designer.cs">
+      <DependentUpon>add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Canteen\canteen_admin.aspx.cs">
+      <DependentUpon>canteen_admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Canteen\canteen_admin.aspx.designer.cs">
+      <DependentUpon>canteen_admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Career\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Career\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Event\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Event\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Gift\Add.aspx.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Gift\Add.aspx.designer.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Gift\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Gift\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Gift\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Gift\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ImageGalleryAdmin\ImageGalleryAdmin.aspx.cs">
+      <DependentUpon>ImageGalleryAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ImageGalleryAdmin\ImageGalleryAdmin.aspx.designer.cs">
+      <DependentUpon>ImageGalleryAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Location\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Location\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Location\Default2.aspx.cs">
+      <DependentUpon>Default2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Location\Default2.aspx.designer.cs">
+      <DependentUpon>Default2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Pharmacy\AddMedicine.aspx.cs">
+      <DependentUpon>AddMedicine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Pharmacy\AddMedicine.aspx.designer.cs">
+      <DependentUpon>AddMedicine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Publication\AddPublication.aspx.cs">
+      <DependentUpon>AddPublication.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Publication\AddPublication.aspx.designer.cs">
+      <DependentUpon>AddPublication.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Publication\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Publication\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Publication\EditPublication.aspx.cs">
+      <DependentUpon>EditPublication.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Publication\EditPublication.aspx.designer.cs">
+      <DependentUpon>EditPublication.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Room\Assign.aspx.cs">
+      <DependentUpon>Assign.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Room\Assign.aspx.designer.cs">
+      <DependentUpon>Assign.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Room\ViewBill.aspx.cs">
+      <DependentUpon>ViewBill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Room\ViewBill.aspx.designer.cs">
+      <DependentUpon>ViewBill.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Room\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Room\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Volunteer\Add.aspx.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Volunteer\Add.aspx.designer.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Volunteer\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Volunteer\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Volunteer\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Volunteer\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Basepage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Blood donation\bd_don.aspx.cs">
+      <DependentUpon>bd_don.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Blood donation\bd_don.aspx.designer.cs">
+      <DependentUpon>bd_don.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Blood donation\sending_email.aspx.cs">
+      <DependentUpon>sending_email.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Blood donation\sending_email.aspx.designer.cs">
+      <DependentUpon>sending_email.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Canteen\canteen_home.aspx.cs">
+      <DependentUpon>canteen_home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Canteen\canteen_home.aspx.designer.cs">
+      <DependentUpon>canteen_home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Career\Application.aspx.cs">
+      <DependentUpon>Application.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Career\Application.aspx.designer.cs">
+      <DependentUpon>Application.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Career\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Career\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Career\Details.aspx.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Career\Details.aspx.designer.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor\profile.aspx.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Doctor\profile.aspx.designer.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Event\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Event\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Event\EventDetails.aspx.cs">
+      <DependentUpon>EventDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Event\EventDetails.aspx.designer.cs">
+      <DependentUpon>EventDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gift\CheckOut.aspx.cs">
+      <DependentUpon>CheckOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gift\CheckOut.aspx.designer.cs">
+      <DependentUpon>CheckOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gift\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gift\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gift\View.aspx.cs">
+      <DependentUpon>View.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gift\View.aspx.designer.cs">
+      <DependentUpon>View.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ImageGallery\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ImageGallery\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Location\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Location\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Location\Directions.aspx.cs">
+      <DependentUpon>Directions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Location\Directions.aspx.designer.cs">
+      <DependentUpon>Directions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Location\MapToLocations.aspx.cs">
+      <DependentUpon>MapToLocations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Location\MapToLocations.aspx.designer.cs">
+      <DependentUpon>MapToLocations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masterpage\BaseMasterpage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masterpage\Main.Master.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masterpage\Main.Master.designer.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Pharmacy\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pharmacy\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Publication\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Publication\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Volunteer\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Volunteer\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Volunteer\Opportunities.aspx.cs">
+      <DependentUpon>Opportunities.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Volunteer\Opportunities.aspx.designer.cs">
+      <DependentUpon>Opportunities.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Sitemap\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NorthBay.Controls\NorthBay.Controls.csproj">
+      <Project>{12FD8E8D-54DF-405F-9982-2E0FE46C09A1}</Project>
+      <Name>NorthBay.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NorthBay.Framework\NorthBay.Framework.csproj">
+      <Project>{D3C249FE-7093-4A2B-83A3-FEBBF463BD6B}</Project>
+      <Name>NorthBay.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NorthBay.Logic\NorthBay.Logic.csproj">
+      <Project>{C3925228-A767-441B-ADF4-B097EC36BF58}</Project>
+      <Name>NorthBay.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NorthBay.Utility\NorthBay.Utility.csproj">
+      <Project>{F156EDB3-256C-4522-B6F8-F39F62DE4B97}</Project>
+      <Name>NorthBay.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Main\Controls.skin" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Masterpage\Main.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App_Themes\Main\Images\Thumbs.db" />
+    <Content Include="App_Themes\Main\SkinFile.skin" />
+    <None Include="Career\Resumes\Aboutus_idm.docx" />
+    <None Include="Career\Resumes\desktop.ini" />
+    <None Include="Career\Resumes\MinutesFeb25.pdf" />
+    <None Include="Career\Resumes\test.docx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49464</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
