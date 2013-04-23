@@ -89,6 +89,7 @@
     <Content Include="App_Themes\Main\Images\lin.jpg" />
     <Content Include="App_Themes\Main\Images\logo.jpg" />
     <Content Include="App_Themes\Main\Images\main.jpg" />
+    <Content Include="App_Themes\Main\Images\mockup.jpg" />
     <Content Include="App_Themes\Main\Images\ontario.jpg" />
     <Content Include="App_Themes\Main\Images\rss.jpg" />
     <Content Include="App_Themes\Main\Images\separator.jpg" />
