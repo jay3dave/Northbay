@@ -43,11 +43,11 @@
         <asp:RequiredFieldValidator ID="rfv_PostDate" runat="server" Text="*Required" ControlToValidate="txt_PostDateI"
             ErrorMessage="Post date cannot be blank" ValidationGroup="Insert" Display="Dynamic" />
         <!-- check whether the post date is valid-->
-        <asp:RegularExpressionValidator ID="rev_PostDateI" runat="server" ControlToValidate="txt_PostDateI"
+        <%--<asp:RegularExpressionValidator ID="rev_PostDateI" runat="server" ControlToValidate="txt_PostDateI"
             Text="*" Display="Dynamic" ErrorMessage="Post date format should be MM/DD/YYYY"
             ValidationExpression="^(((0?[1-9]|1[012])/(0?[1-9]|1\d|2[0-8])|(0?[13456789]|1[012])/
               (29|30)|(0?[13578]|1[02])/31)/(19|[2-9]\d)\d{2}|0?2/29/((19|[2-9]\d)(0[48]|[2468][048]|[13579][26])|(([2468][048]|[3579][26])00)))$"
-            ValidationGroup="Insert" />
+            ValidationGroup="Insert" />--%>
         <br />
         <asp:Label ID="lbl_EndDateI" runat="server" Text="EndDate" AssociatedControlID="txt_EndDateI" />
         <br />
@@ -59,11 +59,11 @@
         <asp:RequiredFieldValidator ID="rfv_EndDate" runat="server" Text="*Required" ControlToValidate="txt_EndDateI"
             ErrorMessage="End date cannot be blank" ValidationGroup="Insert" Display="Dynamic" />
         <!-- check whether the post date is valid-->
-        <asp:RegularExpressionValidator ID="rev_EndDateI" runat="server" ControlToValidate="txt_EndDateI"
+       <%-- <asp:RegularExpressionValidator ID="rev_EndDateI" runat="server" ControlToValidate="txt_EndDateI"
             Text="*" Display="Dynamic" ErrorMessage="End date format should be MM/DD/YYYY"
             ValidationExpression="^(((0?[1-9]|1[012])/(0?[1-9]|1\d|2[0-8])|(0?[13456789]|1[012])/
               (29|30)|(0?[13578]|1[02])/31)/(19|[2-9]\d)\d{2}|0?2/29/((19|[2-9]\d)(0[48]|[2468][048]|[13579][26])|(([2468][048]|[3579][26])00)))$"
-            ValidationGroup="Insert" />
+            ValidationGroup="Insert" />--%>
         <br />
         <asp:Label ID="lbl_StatusI" runat="server" Text="Status" AssociatedControlID="rbl_StatusI" />
         <asp:RadioButtonList ID="rbl_StatusI" runat="server">
@@ -227,22 +227,22 @@
                                     <asp:RequiredFieldValidator ID="rfv_PostDateU" runat="server" Text="*Required" ControlToValidate="txt_PostDateU"
                                         ErrorMessage="Post date cannot be blank" ValidationGroup="update" Display="Dynamic" />
                                     <!-- check whether the post date is valid-->
-                                    <asp:RegularExpressionValidator ID="rev_PostDateU" runat="server" ControlToValidate="txt_PostDateU"
+                                    <%--<asp:RegularExpressionValidator ID="rev_PostDateU" runat="server" ControlToValidate="txt_PostDateU"
                                         Text="*" Display="Dynamic" ErrorMessage="Post date format should be MM/DD/YYYY"
                                         ValidationExpression="^(((0?[1-9]|1[012])/(0?[1-9]|1\d|2[0-8])|(0?[13456789]|1[012])/
               (29|30)|(0?[13578]|1[02])/31)/(19|[2-9]\d)\d{2}|0?2/29/((19|[2-9]\d)(0[48]|[2468][048]|[13579][26])|(([2468][048]|[3579][26])00)))$"
-                                        ValidationGroup="update" />
+                                        ValidationGroup="update" />--%>
                                 </td>
                                 <td>
                                     <!-- check whether the job posting ending  date is not blank-->
                                     <asp:RequiredFieldValidator ID="rfv_EndDateU" runat="server" Text="*Required" ControlToValidate="txt_EndDateU"
                                         ErrorMessage="End date cannot be blank" ValidationGroup="update" Display="Dynamic" />
                                     <!-- check whether the end date is valid-->
-                                    <asp:RegularExpressionValidator ID="rev_EndDateU" runat="server" ControlToValidate="txt_EndDateU"
+                                    <%--<asp:RegularExpressionValidator ID="rev_EndDateU" runat="server" ControlToValidate="txt_EndDateU"
                                         Text="*" Display="Dynamic" ErrorMessage="End date format should be MM/DD/YYYY"
                                         ValidationExpression="^(((0?[1-9]|1[012])/(0?[1-9]|1\d|2[0-8])|(0?[13456789]|1[012])/
               (29|30)|(0?[13578]|1[02])/31)/(19|[2-9]\d)\d{2}|0?2/29/((19|[2-9]\d)(0[48]|[2468][048]|[13579][26])|(([2468][048]|[3579][26])00)))$"
-                                        ValidationGroup="update" />
+                                        ValidationGroup="update" />--%>
                                 </td>
                                 <td>
                             </tr>

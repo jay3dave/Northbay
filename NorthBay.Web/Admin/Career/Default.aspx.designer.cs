@@ -148,15 +148,6 @@ namespace NorthBay.Web.Admin.Career {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_PostDate;
         
         /// <summary>
-        /// rev_PostDateI control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator rev_PostDateI;
-        
-        /// <summary>
         /// lbl_EndDateI control.
         /// </summary>
         /// <remarks>
@@ -191,15 +182,6 @@ namespace NorthBay.Web.Admin.Career {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_EndDate;
-        
-        /// <summary>
-        /// rev_EndDateI control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator rev_EndDateI;
         
         /// <summary>
         /// lbl_StatusI control.

@@ -24,3 +24,16 @@ C:\Users\sanjiv\Dropbox\Team Fantastic\Final Project\NorthBay\NorthBay.Web\bin\N
 C:\Users\sanjiv\Dropbox\Team Fantastic\Final Project\NorthBay\NorthBay.Web\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\sanjiv\Dropbox\Team Fantastic\Final Project\NorthBay\NorthBay.Web\obj\Debug\NorthBay.Web.dll
 C:\Users\sanjiv\Dropbox\Team Fantastic\Final Project\NorthBay\NorthBay.Web\obj\Debug\NorthBay.Web.pdb
+C:\Users\Dev\Desktop\Northbay 23.4.1\Northbay\NorthBay.Web\bin\NorthBay.Web.dll
+C:\Users\Dev\Desktop\Northbay 23.4.1\Northbay\NorthBay.Web\bin\NorthBay.Web.pdb
+C:\Users\Dev\Desktop\Northbay 23.4.1\Northbay\NorthBay.Web\bin\NorthBay.Controls.dll
+C:\Users\Dev\Desktop\Northbay 23.4.1\Northbay\NorthBay.Web\bin\NorthBay.Framework.dll
+C:\Users\Dev\Desktop\Northbay 23.4.1\Northbay\NorthBay.Web\bin\NorthBay.Logic.dll
+C:\Users\Dev\Desktop\Northbay 23.4.1\Northbay\NorthBay.Web\bin\NorthBay.Utility.dll
+C:\Users\Dev\Desktop\Northbay 23.4.1\Northbay\NorthBay.Web\bin\NorthBay.Controls.pdb
+C:\Users\Dev\Desktop\Northbay 23.4.1\Northbay\NorthBay.Web\bin\NorthBay.Framework.pdb
+C:\Users\Dev\Desktop\Northbay 23.4.1\Northbay\NorthBay.Web\bin\NorthBay.Logic.pdb
+C:\Users\Dev\Desktop\Northbay 23.4.1\Northbay\NorthBay.Web\bin\NorthBay.Utility.pdb
+C:\Users\Dev\Desktop\Northbay 23.4.1\Northbay\NorthBay.Web\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Dev\Desktop\Northbay 23.4.1\Northbay\NorthBay.Web\obj\Debug\NorthBay.Web.dll
+C:\Users\Dev\Desktop\Northbay 23.4.1\Northbay\NorthBay.Web\obj\Debug\NorthBay.Web.pdb

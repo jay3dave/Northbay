@@ -237,27 +237,6 @@
       <Association Name="Career_Applicant" Member="Applicants" ThisKey="CareerId" OtherKey="CareerId" Type="Applicant" />
     </Type>
   </Table>
-  <Table Name="dbo.Applicant" Member="Applicants">
-    <Type Name="Applicant">
-      <Column Name="ApplicantId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="CareerId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Fname" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="Lname" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="UnitNo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="StreetNo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="StreetName" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
-      <Column Name="City" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
-      <Column Name="Province" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
-      <Column Name="Pcode" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
-      <Column Name="Tnumber" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="Email" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
-      <Column Name="AppStatus" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="AppDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="ResumeUrl" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="HrComment" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="Career_Applicant" Member="Career" ThisKey="CareerId" OtherKey="CareerId" Type="Career" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Event" Member="Events">
     <Type Name="Event">
       <Column Name="EventId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -374,6 +353,27 @@
       <Column Name="Reference" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
       <Column Name="Title" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
       <Column Name="CategoryName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Applicant" Member="Applicants">
+    <Type Name="Applicant">
+      <Column Name="ApplicantId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CareerId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fname" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Lname" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="UnitNo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="StreetNo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="StreetName" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="Province" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="Pcode" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="Tnumber" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="AppStatus" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="AppDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ResumeUrl" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="HrComment" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Career_Applicant" Member="Career" ThisKey="CareerId" OtherKey="CareerId" Type="Career" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

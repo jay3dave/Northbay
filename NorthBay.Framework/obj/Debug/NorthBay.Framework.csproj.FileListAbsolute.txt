@@ -14,3 +14,11 @@ C:\Users\sanjiv\Dropbox\Team Fantastic\Final Project\NorthBay\NorthBay.Framework
 C:\Users\sanjiv\Dropbox\Team Fantastic\Final Project\NorthBay\NorthBay.Framework\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\sanjiv\Dropbox\Team Fantastic\Final Project\NorthBay\NorthBay.Framework\obj\Debug\NorthBay.Framework.dll
 C:\Users\sanjiv\Dropbox\Team Fantastic\Final Project\NorthBay\NorthBay.Framework\obj\Debug\NorthBay.Framework.pdb
+C:\Users\Dev\Desktop\Northbay 23.4.1\Northbay\NorthBay.Framework\bin\Debug\NorthBay.Framework.dll.config
+C:\Users\Dev\Desktop\Northbay 23.4.1\Northbay\NorthBay.Framework\bin\Debug\NorthBay.Framework.dll
+C:\Users\Dev\Desktop\Northbay 23.4.1\Northbay\NorthBay.Framework\bin\Debug\NorthBay.Framework.pdb
+C:\Users\Dev\Desktop\Northbay 23.4.1\Northbay\NorthBay.Framework\bin\Debug\NorthBay.Utility.dll
+C:\Users\Dev\Desktop\Northbay 23.4.1\Northbay\NorthBay.Framework\bin\Debug\NorthBay.Utility.pdb
+C:\Users\Dev\Desktop\Northbay 23.4.1\Northbay\NorthBay.Framework\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Dev\Desktop\Northbay 23.4.1\Northbay\NorthBay.Framework\obj\Debug\NorthBay.Framework.dll
+C:\Users\Dev\Desktop\Northbay 23.4.1\Northbay\NorthBay.Framework\obj\Debug\NorthBay.Framework.pdb
