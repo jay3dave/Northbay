@@ -18,3 +18,13 @@ C:\Users\sanjiv\Dropbox\Team Fantastic\Final Project\NorthBay\NorthBay.Controls\
 C:\Users\sanjiv\Dropbox\Team Fantastic\Final Project\NorthBay\NorthBay.Controls\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\sanjiv\Dropbox\Team Fantastic\Final Project\NorthBay\NorthBay.Controls\obj\Debug\NorthBay.Controls.dll
 C:\Users\sanjiv\Dropbox\Team Fantastic\Final Project\NorthBay\NorthBay.Controls\obj\Debug\NorthBay.Controls.pdb
+C:\Users\Dev\Desktop\Northbay 23.4.1\Northbay\NorthBay.Controls\bin\Debug\NorthBay.Controls.dll
+C:\Users\Dev\Desktop\Northbay 23.4.1\Northbay\NorthBay.Controls\bin\Debug\NorthBay.Controls.pdb
+C:\Users\Dev\Desktop\Northbay 23.4.1\Northbay\NorthBay.Controls\bin\Debug\AjaxControlToolkit.dll
+C:\Users\Dev\Desktop\Northbay 23.4.1\Northbay\NorthBay.Controls\bin\Debug\NorthBay.Framework.dll
+C:\Users\Dev\Desktop\Northbay 23.4.1\Northbay\NorthBay.Controls\bin\Debug\NorthBay.Utility.dll
+C:\Users\Dev\Desktop\Northbay 23.4.1\Northbay\NorthBay.Controls\bin\Debug\NorthBay.Framework.pdb
+C:\Users\Dev\Desktop\Northbay 23.4.1\Northbay\NorthBay.Controls\bin\Debug\NorthBay.Utility.pdb
+C:\Users\Dev\Desktop\Northbay 23.4.1\Northbay\NorthBay.Controls\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Dev\Desktop\Northbay 23.4.1\Northbay\NorthBay.Controls\obj\Debug\NorthBay.Controls.dll
+C:\Users\Dev\Desktop\Northbay 23.4.1\Northbay\NorthBay.Controls\obj\Debug\NorthBay.Controls.pdb
