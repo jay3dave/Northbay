@@ -43,10 +43,10 @@
       <Column Name="Email" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
       <Column Name="UserRoleId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="User_UserBillingAddress" Member="UserBillingAddresses" ThisKey="UserId" OtherKey="UserId" Type="UserBillingAddress" />
       <Association Name="User_Order" Member="Orders" ThisKey="UserId" OtherKey="UserId" Type="Order" />
       <Association Name="User_RoomBilling" Member="RoomBillings" ThisKey="UserId" OtherKey="UserId" Type="RoomBilling" />
       <Association Name="User_RoomBillingInvoice" Member="RoomBillingInvoices" ThisKey="UserId" OtherKey="UserId" Type="RoomBillingInvoice" />
+      <Association Name="User_UserBillingAddress" Member="UserBillingAddresses" ThisKey="UserId" OtherKey="UserId" Type="UserBillingAddress" />
       <Association Name="UserRole_User" Member="UserRole" ThisKey="UserRoleId" OtherKey="UserRoleId" Type="UserRole" IsForeignKey="true" />
     </Type>
   </Table>
@@ -82,23 +82,6 @@
       <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.UserBillingAddress" Member="UserBillingAddresses">
-    <Type Name="UserBillingAddress">
-      <Column Name="UserBillingAddressId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="FullName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="AddressLine1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="AddressLine2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="State" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CountryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="PostalCode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="UserBillingAddress_Order" Member="Orders" ThisKey="UserBillingAddressId" OtherKey="UserBillingAddressId" Type="Order" />
-      <Association Name="User_UserBillingAddress" Member="User" ThisKey="UserId" OtherKey="UserId" Type="User" IsForeignKey="true" />
-      <Association Name="Country_UserBillingAddress" Member="Country" ThisKey="CountryId" OtherKey="CountryId" Type="Country" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Country" Member="Countries">
     <Type Name="Country">
       <Column Name="CountryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -108,21 +91,6 @@
       <Column Name="Code3" Type="System.String" DbType="NChar(3)" CanBeNull="true" />
       <Column Name="NumberCode" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
       <Association Name="Country_UserBillingAddress" Member="UserBillingAddresses" ThisKey="CountryId" OtherKey="CountryId" Type="UserBillingAddress" />
-    </Type>
-  </Table>
-  <Table Name="dbo.UserBillingAddressView" Member="UserBillingAddressViews">
-    <Type Name="UserBillingAddressView">
-      <Column Name="UserBillingAddressId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="FullName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="AddressLine1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="AddressLine2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="State" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CountryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CountryName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="PostalCode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.OrderItem" Member="OrderItems">
@@ -374,6 +342,40 @@
       <Column Name="ResumeUrl" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="HrComment" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="Career_Applicant" Member="Career" ThisKey="CareerId" OtherKey="CareerId" Type="Career" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserBillingAddress" Member="UserBillingAddresses">
+    <Type Name="UserBillingAddress">
+      <Column Name="UserBillingAddressId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AddressLine1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AddressLine2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CountryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PostalCode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="UserBillingAddress_Order" Member="Orders" ThisKey="UserBillingAddressId" OtherKey="UserBillingAddressId" Type="Order" />
+      <Association Name="Country_UserBillingAddress" Member="Country" ThisKey="CountryId" OtherKey="CountryId" Type="Country" IsForeignKey="true" />
+      <Association Name="User_UserBillingAddress" Member="User" ThisKey="UserId" OtherKey="UserId" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserBillingAddressView" Member="UserBillingAddressViews">
+    <Type Name="UserBillingAddressView">
+      <Column Name="UserBillingAddressId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AddressLine1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AddressLine2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CountryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CountryName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PostalCode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
 </Database>
