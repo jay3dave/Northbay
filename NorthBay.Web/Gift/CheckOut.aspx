@@ -15,7 +15,7 @@
         <SideBarStyle BackColor="#1C5E55" Font-Size="0.9em" VerticalAlign="Top" />
         <StepStyle BorderWidth="2px" BackColor="#F7F6F3" BorderColor="#E6E2D8" BorderStyle="Solid" />
         <HeaderTemplate>
-            <asp:DataList ID="dl_header" runat="server" RepeatDirection="Horizontal" CssClass="checkout_header">
+            <asp:DataList ID="dl_header" runat="server" RepeatDirection="Horizontal" CssClass="checkout_header" Width="">
                 <ItemTemplate>
                     <%# DataBinder.Eval(Container.DataItem, "Title") + "  " %>
                 </ItemTemplate>
@@ -24,7 +24,7 @@
         <WizardSteps>
             <asp:WizardStep runat="server" StepType="Start" Title="Address">
                 <%--Address Book--%>
-                <asp:DataList runat="server" ID="dl_address" RepeatDirection="Horizontal" RepeatColumns="3">
+                <asp:DataList runat="server" ID="dl_address" RepeatDirection="Horizontal" RepeatColumns="3" Width="100%">
                     <HeaderTemplate>
                         <hr class="line_long" />
                     </HeaderTemplate>
@@ -65,7 +65,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <asp:Button runat="server" ID="btn_remove" Text="Remove" CommandName="Remove" />
+                                        <asp:Button runat="server" ID="btn_remove" Text="Remove" OnClick="Button_Click" CommandName="Remove" CommandArgument='<%# Eval("UserBillingAddressId") %>' OnClientClick="return confirm('Are you sure you want to remove this address?');" />
                                     </td>
                                 </tr>
                             </table>
@@ -78,24 +78,28 @@
                 <custom:ValidationGroupPanel runat="server" ID="vgp_address" ValidationGroup="billing">
                     <div class="input_label bold">
                         Full Name:
+                   
                     </div>
                     <div class="input_control">
                         <custom:TextBox runat="server" ID="txt_fullname" Required="True" ValidationGroup="billing"></custom:TextBox>
                     </div>
                     <div class="input_label bold">
                         Address Line 1:
+                   
                     </div>
                     <div class="input_control">
                         <custom:TextBox runat="server" ID="txt_address1" Required="True" ValidationGroup="billing"></custom:TextBox>
                     </div>
                     <div class="input_label bold">
                         Address Line 2:
+                   
                     </div>
                     <div class="input_control">
                         <custom:TextBox runat="server" ID="txt_address2" ValidationGroup="billing"></custom:TextBox>
                     </div>
                     <div class="input_label bold">
                         City:
+                   
                     </div>
                     <div class="input_control">
                         <custom:TextBox runat="server" ID="txt_city" Required="True" ValidType="Characters"
@@ -103,6 +107,7 @@
                     </div>
                     <div class="input_label bold">
                         State:
+                   
                     </div>
                     <div class="input_control">
                         <custom:TextBox runat="server" ID="txt_state" Required="True" ValidType="Characters"
@@ -110,12 +115,14 @@
                     </div>
                     <div class="input_label bold">
                         Country:
+                   
                     </div>
                     <div class="input_control">
                         <custom:DropDownList runat="server" ID="ddl_country" Required="True" ValidationGroup="billing" />
                     </div>
                     <div class="input_label bold">
                         Postal Code:
+                   
                     </div>
                     <div class="input_control">
                         <custom:TextBox runat="server" ID="txt_postalcode" Required="True" ValidType="PostalCode"
@@ -123,6 +130,7 @@
                     </div>
                     <div class="input_label bold">
                         Phone Number:
+                   
                     </div>
                     <div class="input_control">
                         <custom:TextBox runat="server" ID="txt_phone" Required="True" ValidType="Numbers"
@@ -133,8 +141,7 @@
                 </custom:ValidationGroupPanel>
             </asp:WizardStep>
             <asp:WizardStep runat="server" Title="Items">
-                <h1>
-                    Summary</h1>
+                <h1>Summary</h1>
                 <asp:GridView runat="server" ID="gv_cart" AutoGenerateColumns="False" ShowFooter="True"
                     OnRowDataBound="GvCart_RowDataBound" CssClass="gridview_control">
                     <Columns>
@@ -222,6 +229,7 @@
                                 Expiration Number:<br />
                                 <custom:DropDownList ID="ddl_month" runat="server" Required="True" />
                                 &nbsp;
+                               
                                 <custom:DropDownList ID="ddl_year" runat="server" Required="True" />
                             </asp:TableCell>
                         </asp:TableRow>
@@ -232,6 +240,7 @@
             </asp:WizardStep>
             <asp:WizardStep runat="server" Title="Place Order" AllowReturn="False" StepType="Complete">
                 Thank you for placing an order with us. Your order will be processed and delivered.
+           
             </asp:WizardStep>
         </WizardSteps>
         <StartNavigationTemplate>

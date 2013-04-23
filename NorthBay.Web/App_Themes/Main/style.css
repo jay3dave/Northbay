@@ -506,6 +506,10 @@ footer .links
     text-decoration: underline;
 }
 
+.billing_address {
+    margin: 5px;
+}
+
 .billing_address td
 {
     padding-bottom: 4px;

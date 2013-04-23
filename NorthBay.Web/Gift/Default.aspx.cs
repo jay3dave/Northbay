@@ -223,9 +223,9 @@ namespace NorthBay.Web.Gift
             if (maximumHeight >= newHeight)
                 return;
 
-            var ratio = newHeight / maximumHeight;
+            var ratio = (decimal)newHeight / (decimal)maximumHeight;
             newHeight = maximumHeight;
-            newWidth = newWidth / ratio;
+            newWidth =  (int) ((decimal)newWidth / (decimal)ratio);
         }
 
         protected void GridView_PageIndexChanging(object sender, GridViewPageEventArgs e)

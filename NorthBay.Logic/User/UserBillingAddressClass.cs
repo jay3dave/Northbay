@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Data.Linq;
+﻿using System.Data.Linq;
 using System.Linq;
 using NorthBay.Framework.Database;
 
@@ -11,12 +10,26 @@ namespace NorthBay.Logic.User
         {
             using (var context = Db.DataContext())
             {
-                DataLoadOptions options = new DataLoadOptions();
+                var options = new DataLoadOptions();
                 options.LoadWith<UserBillingAddress>(x => x.Country);
 
                 context.LoadOptions = options;
 
                 return context.UserBillingAddresses.Single(x => x.UserBillingAddressId == id);
+            }
+        }
+
+        public override bool Delete(int id)
+        {
+            using (var context = Db.DataContext())
+            {
+                var objUserBillingAddress = context.UserBillingAddresses.Single(x => x.UserBillingAddressId == id);
+
+                objUserBillingAddress.IsActive = false;
+
+                context.SubmitChanges();
+
+                return true;
             }
         }
     }

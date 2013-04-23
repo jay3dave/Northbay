@@ -4,6 +4,8 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using NorthBay.Framework.Database;
+using NorthBay.Utility;
+
 
 namespace NorthBay.Logic.Career
 {
@@ -72,8 +74,10 @@ namespace NorthBay.Logic.Career
                 objnewCareer.Title = _title;
                 objnewCareer.Description = _description;
                 objnewCareer.Category = _category;
-                objnewCareer.PostDate = DateTime.Parse(_postdate);
-                objnewCareer.EndDate = DateTime.Parse(_enddate);
+                objnewCareer.PostDate = TextHelper.ToDateTime(_postdate) ?? DateTime.Now;
+                //DateTime.ParseExact(_postdate, "dd/MM/yyyy hh:mm tt", null); //DateTime.Parse(_postdate);
+                objnewCareer.EndDate = TextHelper.ToDateTime(_enddate) ?? DateTime.Now;
+                //DateTime.ParseExact(_enddate, "dd/MM/yyyy hh:mm tt", null); //DateTime.Parse(_enddate);
                 objnewCareer.Active = _active;
                 //insert command
                 objCareersDC.Careers.InsertOnSubmit(objnewCareer);
@@ -101,6 +105,8 @@ namespace NorthBay.Logic.Career
                 return true;
             }
         }
+
+
 
         public bool commitDelete(int _CareerId)
         {

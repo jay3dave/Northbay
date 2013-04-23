@@ -42,11 +42,11 @@ namespace NorthBay.Web.Gift
             //return if shopping cart is empty
             if (ShoppingCart == null || ShoppingCart.Count <= 0)
                 return;
-        
+
             //Check if user is logged in
             if (!IsAuthenticated())
                 Response.Redirect("~/Login.aspx?ReturnUrl=" + HttpContext.Current.Request.Url.AbsoluteUri);
-        
+
             if (Page.IsPostBack)
                 return;
 
@@ -203,11 +203,12 @@ namespace NorthBay.Web.Gift
             if (string.IsNullOrEmpty(commandName))
                 return;
 
+            int? id;
             switch (commandName.ToLower())
             {
                 case "ship":
                     {
-                        var id = TextHelper.ToInteger(button.CommandArgument);
+                        id = TextHelper.ToInteger(button.CommandArgument);
 
                         if (id == null)
                             return;
@@ -235,7 +236,8 @@ namespace NorthBay.Web.Gift
                             CountryId = TextHelper.ToInteger(ddl_country.SelectedValue),
                             PostalCode = txt_postalcode.Text,
                             PhoneNumber = txt_phone.Text,
-                            UserId = LoggedInUserId //Get from session
+                            UserId = LoggedInUserId,
+                            IsActive = true//Get from session
                         };
 
                         int returnId;
@@ -301,7 +303,21 @@ namespace NorthBay.Web.Gift
                             }
                         }
 
+                        ShoppingCart = null;
+
                         MoveToNextStep(3);
+                    }
+                    break;
+
+                case "remove":
+                    id = TextHelper.ToInteger(button.CommandArgument);
+
+                    if (id == null)
+                        return;
+
+                    if (_userBillingAddress.Delete((int)id))
+                    {
+                        DlAddress_DataBind();
                     }
                     break;
             }

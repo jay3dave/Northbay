@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Web.UI.WebControls;
 using NorthBay.Framework.Database;
 using NorthBay.Logic.Gift;
@@ -66,12 +65,10 @@ namespace NorthBay.Web.Gift
             if (string.IsNullOrEmpty(commandName))
                 return;
 
-            int? productId;
-
             switch (commandName.ToLower())
             {
                 case "update":
-                    productId = TextHelper.ToInteger(button.CommandArgument);
+                    int? productId = TextHelper.ToInteger(button.CommandArgument);
 
                     //if id not found
                     if (productId == null)
@@ -186,9 +183,9 @@ namespace NorthBay.Web.Gift
             if (maximumHeight >= newHeight)
                 return;
 
-            var ratio = newHeight / maximumHeight;
+            var ratio = (decimal)newHeight / (decimal)maximumHeight;
             newHeight = maximumHeight;
-            newWidth = newWidth / ratio;
+            newWidth = (int)((decimal)newWidth / (decimal)ratio);
         }
 
     }
