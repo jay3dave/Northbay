@@ -25,3 +25,12 @@ C:\Users\Dev\Desktop\Northbay 23.4.1\Northbay\NorthBay.Logic\bin\Debug\NorthBay.
 C:\Users\Dev\Desktop\Northbay 23.4.1\Northbay\NorthBay.Logic\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Dev\Desktop\Northbay 23.4.1\Northbay\NorthBay.Logic\obj\Debug\NorthBay.Logic.dll
 C:\Users\Dev\Desktop\Northbay 23.4.1\Northbay\NorthBay.Logic\obj\Debug\NorthBay.Logic.pdb
+C:\Projects\Northbay\NorthBay.Logic\bin\Debug\NorthBay.Logic.dll
+C:\Projects\Northbay\NorthBay.Logic\bin\Debug\NorthBay.Logic.pdb
+C:\Projects\Northbay\NorthBay.Logic\bin\Debug\NorthBay.Framework.dll
+C:\Projects\Northbay\NorthBay.Logic\bin\Debug\NorthBay.Utility.dll
+C:\Projects\Northbay\NorthBay.Logic\bin\Debug\NorthBay.Framework.pdb
+C:\Projects\Northbay\NorthBay.Logic\bin\Debug\NorthBay.Utility.pdb
+C:\Projects\Northbay\NorthBay.Logic\obj\Debug\NorthBay.Logic.csprojResolveAssemblyReference.cache
+C:\Projects\Northbay\NorthBay.Logic\obj\Debug\NorthBay.Logic.dll
+C:\Projects\Northbay\NorthBay.Logic\obj\Debug\NorthBay.Logic.pdb
