@@ -28,9 +28,9 @@ namespace NorthBay.Web.Publication
             int id = Convert.ToInt32(((LinkButton)sender).CommandArgument.ToString());
             
 
-            lblPublicationTitle.Text = "Title: "+objPublication.Select(id).Title;
+            lblPublicationTitle.Text = "Title: <br/>"+objPublication.Select(id).Title;
             lblPublicationDetail.Visible = true;
-            lblPublicationDescription.Text = "Article: " + objTempPublication.Select(id).Description;
+            lblPublicationDescription.Text = "Article: <br/>" + objTempPublication.Select(id).Description;
 
         }
 
