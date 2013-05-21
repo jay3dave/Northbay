@@ -12,9 +12,9 @@
 
         imgLoader.style.display = "block";
         img.onload = function () {
-            //alert("imageOnload "+img.src);
+            alert("imageOnload "+img.src);
             imgFull.src = img.src;
-            //alert(imgFull.src);    
+            alert(imgFull.src);    
             imgFull.style.display = "block";
             imgLoader.style.display = "none";
         };
@@ -117,7 +117,7 @@ html {overflow-x:auto; overflow-y:hidden;}
         <tr>
             <td valign="middle" align="center">
                 <img id="imgLoader" alt="" src="../Images/ImageGallery/loader.gif" />
-                <img id="imgFull" runat="server" alt="" src="" style="display: none;height: 500px;width: 590px" />
+                <img id="imgFull" alt="" src="" style="display: none;height: 500px;width: 590px" />
             </td>
         </tr>
         <tr>
