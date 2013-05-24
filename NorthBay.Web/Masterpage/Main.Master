@@ -23,7 +23,8 @@
                         <asp:HyperLink ID="link_home" runat="server" ImageUrl="~/App_Themes/Main/images/home.jpg" NavigateUrl="~/Default.aspx" CssClass="toplinks" />
                         <asp:HyperLink ID="link_about" runat="server" ImageUrl="~/App_Themes/Main/images/about.jpg" NavigateUrl="~/Default.aspx" CssClass="toplinks" />
                         <asp:HyperLink ID="link_contact" runat="server" ImageUrl="~/App_Themes/Main/images/contact.jpg" NavigateUrl="~/Default.aspx" CssClass="toplinks" />
-                        <asp:HyperLink ID="link_careers" runat="server" ImageUrl="~/App_Themes/Main/images/careers.jpg" NavigateUrl="~/Default.aspx" CssClass="toplinks" />
+                       <%-- <asp:HyperLink ID="link_careers" runat="server" ImageUrl="~/App_Themes/Main/images/careers.jpg" NavigateUrl="~/Default.aspx" CssClass="toplinks" />--%>
+                        <asp:HyperLink ID="link_login" runat="server" ImageUrl="~/App_Themes/Main/images/login.jpg" NavigateUrl="~/Login.aspx" CssClass="toplinks" />
                     </section>
                     <section class="float-right"> <%--language links--%>
                         <asp:HyperLink ID="link_en" runat="server" ImageUrl="~/App_Themes/Main/images/en.jpg" NavigateUrl="~/Default.aspx" />

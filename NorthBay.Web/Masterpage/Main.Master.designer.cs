@@ -85,13 +85,13 @@ namespace NorthBay.Web.Masterpage {
         protected global::System.Web.UI.WebControls.HyperLink link_contact;
         
         /// <summary>
-        /// link_careers control.
+        /// link_login control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink link_careers;
+        protected global::System.Web.UI.WebControls.HyperLink link_login;
         
         /// <summary>
         /// link_en control.
