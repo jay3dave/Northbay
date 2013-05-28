@@ -22,7 +22,7 @@
                     <section class="toplinks"> <%--links on the top of the page--%>
                         <asp:HyperLink ID="link_home" runat="server" ImageUrl="~/App_Themes/Main/images/home.jpg" NavigateUrl="~/Default.aspx" CssClass="toplinks" />
                         <asp:HyperLink ID="link_about" runat="server" ImageUrl="~/App_Themes/Main/images/about.jpg" NavigateUrl="~/Default.aspx" CssClass="toplinks" />
-                        <asp:HyperLink ID="link_contact" runat="server" ImageUrl="~/App_Themes/Main/images/contact.jpg" NavigateUrl="~/Default.aspx" CssClass="toplinks" />
+                        <asp:HyperLink ID="link_contact" runat="server" ImageUrl="~/App_Themes/Main/images/contact.jpg" NavigateUrl="~/Location/Default.aspx" CssClass="toplinks" />
                        <%-- <asp:HyperLink ID="link_careers" runat="server" ImageUrl="~/App_Themes/Main/images/careers.jpg" NavigateUrl="~/Default.aspx" CssClass="toplinks" />--%>
                         <asp:HyperLink ID="link_login" runat="server" ImageUrl="~/App_Themes/Main/images/login.jpg" NavigateUrl="~/Login.aspx" CssClass="toplinks" />
                     </section>
@@ -98,12 +98,12 @@
                 <div class="links">
                     <asp:Menu ID="footerMenu2" runat="server" Orientation="Vertical" ForeColor="Black" StaticSubMenuIndent="0px" CssClass="footerMenu" SkipLinkText="" >
                         <Items>
-                            <asp:MenuItem Text="Careers"  NavigateUrl="~/Default.aspx" />
+                            <asp:MenuItem Text="Careers"  NavigateUrl="~/Career/Default.aspx" />
                             <asp:MenuItem Text="Mental Health" NavigateUrl="~/Default.aspx" />
                             <asp:MenuItem Text="News & Media" NavigateUrl="~/Default.aspx" />
                             <asp:MenuItem Text="Volunteering"  NavigateUrl="~/Default.aspx" />
                             <asp:MenuItem Text="Accountability"  NavigateUrl="~/Default.aspx" />
-                            <asp:MenuItem Text="Contact Us" NavigateUrl="~/Default.aspx" />
+                            <asp:MenuItem Text="Contact Us" NavigateUrl="~/Location/Default.aspx" />
                         </Items>
                         <StaticHoverStyle ForeColor="yellow" />
                          <StaticMenuStyle VerticalPadding="0" />
